@@ -1,0 +1,2 @@
+imports:
+    - { resource: '../../../../../../vendor/sylius/calendar/tests/Behat/Resources/services.yaml' }
