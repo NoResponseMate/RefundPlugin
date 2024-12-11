@@ -24,12 +24,21 @@
        bin/console doctrine:migrations:migrate --no-interaction
    ```
 
-1. The directories structure has been updated to the current Symfony recommendations:
+1. As the assets have been reorganized, you need to update the way you import them in your application.
+   Add the following line to your `assets/admin/entrypoint.js` file:
+
+    ```js
+        import '../../vendor/sylius/refund-plugin/assets/entrypoint';
+    ```
+
+1. The structures of the directories have been updated to follow the current Symfony recommendations:
+   - `@SyliusRefundPlugin/Resources/assets` -> `@SyliusRefundPlugin/assets`
    - `@SyliusRefundPlugin/Resources/config` -> `@SyliusRefundPlugin/config`
    - `@SyliusRefundPlugin/Resources/translations` -> `@SyliusRefundPlugin/translations`
    - `@SyliusRefundPlugin/Resources/views` -> `@SyliusRefundPlugin/templates`
 
    You need to adjust the import of configuration file in your end application:
+
    ```diff
    imports:
    -   - { resource: "@SyliusRefundPlugin/Resources/config/config.yml" }
@@ -37,10 +46,11 @@
    ```
 
    And the routes configuration paths:
+
    ```diff
-   sylius_refund:
-   -   resource: "@SyliusRefundPlugin/Resources/config/routing.yml"
-   +   resource: "@SyliusRefundPlugin/config/routing.yml"
+       sylius_refund:
+   -       resource: "@SyliusRefundPlugin/Resources/config/routing.yml"
+   +       resource: "@SyliusRefundPlugin/config/routes.yaml"
    ```
 
    Adjust the paths to assets and templates if you are using them.
