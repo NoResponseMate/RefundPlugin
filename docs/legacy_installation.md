@@ -1,4 +1,4 @@
-### Legacy installation (without SymfonyFlex)
+### Legacy installation (without Symfony Flex)
 
 1. Require plugin with composer:
 
