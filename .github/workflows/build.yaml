@@ -34,7 +34,7 @@ jobs:
                 mysql: ["8.4"]
                 postgres: ["15.8"]
                 node: ["20.x"]
-                wkhtmltopdf: ["0.12.6-1"]
+                wkhtmltopdf: ["0.12.6.1-2"]
                 state_machine_adapter: ["symfony_workflow"]
 
                 include:
@@ -45,7 +45,7 @@ jobs:
                         database: "mysql"
                         mysql: "8.4"
                         node: "20.x"
-                        wkhtmltopdf: "0.12.6-1"
+                        wkhtmltopdf: "0.12.6.1-2"
                         state_machine_adapter: "symfony_workflow"
                     -
                         php: "8.2"
@@ -54,7 +54,7 @@ jobs:
                         database: "mysql"
                         mysql: "8.4"
                         node: "20.x"
-                        wkhtmltopdf: "0.12.6-1"
+                        wkhtmltopdf: "0.12.6.1-2"
                         state_machine_adapter: "winzou_state_machine"
                     -
                         php: "8.2"
@@ -126,8 +126,8 @@ jobs:
                 if: matrix.wkhtmltopdf != false && steps.cache-wkhtmltopdf.outputs.cache-hit != 'true'
                 run: |
                     sudo apt-get install -y xfonts-base xfonts-75dpi
-                    wget https://github.com/wkhtmltopdf/packaging/releases/download/${{ matrix.wkhtmltopdf }}/wkhtmltox_${{ matrix.wkhtmltopdf }}.focal_amd64.deb
-                    sudo dpkg -i wkhtmltox_${{ matrix.wkhtmltopdf }}.focal_amd64.deb
+                    wget https://github.com/wkhtmltopdf/packaging/releases/download/${{ matrix.wkhtmltopdf }}/wkhtmltox_${{ matrix.wkhtmltopdf }}.jammy_amd64.deb
+                    sudo dpkg -i wkhtmltox_${{ matrix.wkhtmltopdf }}.jammy_amd64.deb
 
             -
                 name: Disable PDF generation
