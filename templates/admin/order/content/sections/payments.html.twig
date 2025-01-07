@@ -1,0 +1,6 @@
+{% set order = hookable_metadata.context.resource %}
+{% set refund_payments = get_all_refund_payments_by_order(order) %}
+
+<div class="card mb-3" {{ sylius_test_html_attribute('payments') }}>
+    {% hook 'payments' with { refund_payments } %}
+</div>

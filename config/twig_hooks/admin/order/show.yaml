@@ -42,6 +42,9 @@ sylius_twig_hooks:
                 priority: 0
 
         'sylius_admin.order.show.content.sections#left':
+            payments:
+                template: '@SyliusRefundPlugin/admin/order/content/sections/payments.html.twig'
+                priority: 100
             credit_memos:
                 template: '@SyliusRefundPlugin/admin/order/content/sections/credit_memos.html.twig'
                 priority: 50
