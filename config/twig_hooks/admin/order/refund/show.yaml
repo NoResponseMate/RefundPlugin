@@ -117,7 +117,7 @@ sylius_twig_hooks:
         'sylius_refund.admin.order.refund.content.sections.form.fields':
             payment_method:
                 template: '@SyliusRefundPlugin/admin/order/refund/content/sections/form/fields/payment_method.html.twig'
-                priority: 100
+                priority: 0
             comment:
                 template: '@SyliusRefundPlugin/admin/order/refund/content/sections/form/fields/comment.html.twig'
-                priority: 0
+                priority: 100

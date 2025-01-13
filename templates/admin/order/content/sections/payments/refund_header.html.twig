@@ -1,3 +1,7 @@
-<div class="card-header">
-    {% hook 'refund_header' %}
-</div>
+{% set refund_payments = hookable_metadata.context.refund_payments %}
+
+{% if refund_payments|length > 0 %}
+    <div class="card-header border-top">
+        {% hook 'refund_header' %}
+    </div>
+{% endif %}
